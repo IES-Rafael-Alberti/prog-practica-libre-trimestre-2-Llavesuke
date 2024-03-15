@@ -1,15 +1,23 @@
 package org.example
 
+/**
+ * This class represents a programmer, which is a type of employee.
+ *
+ * @property name The name of the programmer.
+ * @property programmingLanguage The programming language that the programmer uses.
+ * @property level The level of the programmer (Junior, Mid, Senior).
+ */
 class Programmer(
     name: String,
     val programmingLanguage: String,
     val level: String
 ) : Employee(name, "Programmer") {
 
-    fun writeCode() {
-        Utils.showMessage("${getName()} is writing code in $programmingLanguage")
-    }
-
+    /**
+     * Calculates the salary of the programmer based on their level.
+     *
+     * @return The salary of the programmer.
+     */
     override fun calculateSalary(): Double {
         return when (level) {
             "Junior" -> 1000.0

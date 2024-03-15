@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    implementation("com.github.ajalt.mordant:mordant:2.4.0")
+    implementation("com.github.ajalt.mordant:mordant:2.0.0")
 }
 
 tasks.test {

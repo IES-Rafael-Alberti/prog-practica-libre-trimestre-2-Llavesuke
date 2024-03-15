@@ -3,27 +3,35 @@ package org.example
 import java.time.LocalDate
 import java.util.Date
 import java.util.UUID
-import java.io.IOException
 
+/**
+ * Utility class that provides various helper methods.
+ */
 class Utils {
     companion object {
         /**
-         * Print the message in the terminal
+         * Prints the given message to the terminal.
          *
-         * @param message The message to be printed
+         * @param message The message to be printed.
          */
         fun showMessage(message: String) {
             println(message)
         }
 
+        /**
+         * Generates a random UUID.
+         *
+         * @return The generated UUID.
+         */
         fun generateId(): UUID {
             return UUID.randomUUID()
         }
 
         /**
-         * Ask the user a string
+         * Prompts the user for a string input.
          *
-         * @return The user input
+         * @param string The prompt message.
+         * @return The user's input as a string.
          */
         fun stringInput(string: String): String {
             print(string)
@@ -33,17 +41,18 @@ class Utils {
         }
 
         /**
-         * Ask a number to the user
+         * Prompts the user for a number input.
          *
-         * @throws NumberFormatException If the user write something different from an Int
-         * @return The number introduced by the user
+         * @param string The prompt message.
+         * @throws NumberFormatException If the user's input is not a valid integer.
+         * @return The user's input as an integer.
          */
         fun numberInput(string: String = "Introduce a number follow-up -> "): Int {
             var number: Int? = null
 
             while (number == null) {
                 try {
-                    print("-> ")
+                    print(string)
                     val input = readln().toInt()
                     number = input
                 } catch (e: NumberFormatException) {
@@ -53,6 +62,11 @@ class Utils {
             return number
         }
 
+        /**
+         * Prompts the user for a date input.
+         *
+         * @return The user's input as a Date.
+         */
         fun insertDate(): Date {
             var date: Date? = null
 
@@ -81,26 +95,11 @@ class Utils {
             return date
         }
 
-        fun clearScreen() {
-            try {
-                if (System.getProperty("os.name").contains("Windows")) {
-                    ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor()
-                } else {
-                    ProcessBuilder("clear").inheritIO().start().waitFor()
-                }
-            } catch (e: IOException) {
-                println("Error al limpiar la pantalla: ${e.message}")
-            } catch (e: InterruptedException) {
-                println("Error al limpiar la pantalla: ${e.message}")
-            }
-        }
-
-        fun main() {
-            clearScreen()
-            println("¡La pantalla ha sido limpiada!")
-        }
-
-
+        /**
+         * Prints a progress bar to the terminal.
+         *
+         * @param progress The progress percentage (0.0 to 1.0).
+         */
         fun printProgressBar(progress: Double) {
             val width = 50 // ancho de la barra de progreso
             val value = (progress * width).toInt() // calcula el número de caracteres de relleno
