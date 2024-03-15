@@ -1,5 +1,7 @@
 package org.example
 
+import java.util.*
+
 /**
  * This interface represents a manager for a project.
  */
@@ -40,4 +42,17 @@ interface ProjectManager {
      */
     fun getName(): String
 
+    /**
+     * Gets the description of the project
+     *
+     * @return The description of the project
+     */
+    fun getDescription(): String
+
+    /**
+     * Gets the start date of the project
+     *
+     * @return The start date of the project
+     */
+    fun getDate(): Date
 }

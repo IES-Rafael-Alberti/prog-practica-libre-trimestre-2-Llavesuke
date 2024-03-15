@@ -79,6 +79,14 @@ class Project(
         return name
     }
 
+    override fun getDescription(): String{
+        return description
+    }
+
+    override fun getDate(): Date {
+        return startDate
+    }
+
     override fun toString(): String {
         return "Project $name \nDescription:$description | Start Date:$startDate"
     }

@@ -41,8 +41,7 @@ object MainMenu {
                 "2" -> secondaryMenus.projectsMenu()
                 "3" -> secondaryMenus.workersMenu()
                 "4" -> secondaryMenus.teamsMenu()
-                "5" -> secondaryMenus.viewProgress()
-                "6" -> Utils.showMessage("Exiting...")
+                "5" -> Utils.showMessage("Exiting...")
                 else -> Utils.showMessage("Invalid option. Please try again.")
             }
         } while (option != "6")
